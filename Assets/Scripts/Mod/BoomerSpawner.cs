@@ -6,7 +6,14 @@ using UnityEngine;
 public class BoomerSpawner : MonoBehaviour
 {
     public GameObject BoomerPrefab;
+    public int BoomNumberTemp;
+    public int BoomNumberMax;
     public float spawnHeight = 5f;
+
+    void Start(){
+        BoomNumberTemp = BoomNumberMax;
+    }
+
     // Start is called before the first frame update
     void OnMouseDown()
     {
@@ -23,11 +30,12 @@ public class BoomerSpawner : MonoBehaviour
             // 计算生成位置：点击的x, z坐标，y坐标在上方5单位处
             Vector3 spawnPosition = new Vector3(clickPosition.x, clickPosition.y + spawnHeight, clickPosition.z);
 
-            // 生成bomb预制件
+            if(BoomNumberTemp > 0){
+             // 生成bomb预制件  
             Instantiate(BoomerPrefab, spawnPosition, Quaternion.identity);
+            BoomNumberTemp--;
+            } 
         }
-
-    
     }
 
 

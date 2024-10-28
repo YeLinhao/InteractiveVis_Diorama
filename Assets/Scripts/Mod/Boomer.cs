@@ -21,7 +21,7 @@ public class Boomer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         countdown -= Time.deltaTime;
         if(countdown <= 0f && !hasExploded)
@@ -45,7 +45,8 @@ public class Boomer : MonoBehaviour
                 rb.AddExplosionForce(force,transform.position,radius);
             }
         }
-        Instantiate(BoomEffectPrefab,this.transform.position,Quaternion.identity);
+        var boomEffectClone = Instantiate(BoomEffectPrefab,this.transform.position,Quaternion.identity);
+        Destroy(boomEffectClone,5);
         Destroy(gameObject);
 
     }
