@@ -6,13 +6,29 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
 
     public BoomerSpawner boomerSpawner;
     public TMP_Text boomerCount_TXT;
+    public GameObject winningPanel;
+
+
 
     void FixedUpdate(){
-        boomerCount_TXT.text = boomerSpawner.BoomNumberTemp.ToString() + " / " + boomerSpawner.BoomNumberMax.ToString();
+        if (boomerCount_TXT != null)
+        {
+            boomerCount_TXT.text = boomerSpawner.BoomNumberTemp.ToString() + " / " + boomerSpawner.BoomNumberMax.ToString();
+        }
+        
     }
 
 
