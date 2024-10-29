@@ -15,12 +15,12 @@ public class GameManager : MonoBehaviour
     }
 
     public int EnemyNum;
-    public List<GameObject> Pigs;
 
+
+    public List<GameObject> Pigs;
     private void Start()
     {
         var pigs = GameObject.FindGameObjectsWithTag("Pig");
-
         Pigs.AddRange(pigs);
     }
 

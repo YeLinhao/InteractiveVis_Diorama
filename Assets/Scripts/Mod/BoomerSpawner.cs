@@ -17,23 +17,24 @@ public class BoomerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void OnMouseDown()
     {
-        // 从摄像机发射一条射线到鼠标点击的位置
+        // send raycast from camera to mouse position
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // 检测射线是否击中当前物体（plane）
+        // Check if raycast hit the plane
         if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == this.gameObject)
         {
-            // 获取被点击的世界坐标
+            // Then get the exact position of hit point
             Vector3 clickPosition = hit.point;
 
-            // 计算生成位置：点击的x, z坐标，y坐标在上方5单位处
+            // Spawn Position is just above the hit position, and the height can be modified.
             Vector3 spawnPosition = new Vector3(clickPosition.x, clickPosition.y + spawnHeight, clickPosition.z);
 
-            if(BoomNumberTemp > 0){
-             // 生成bomb预制件  
-            Instantiate(BoomerPrefab, spawnPosition, Quaternion.identity);
-            BoomNumberTemp--;
+            //Bomb Spawn
+            if(BoomNumberTemp > 0)
+            {
+                Instantiate(BoomerPrefab, spawnPosition, Quaternion.identity);
+                BoomNumberTemp--;
             } 
         }
     }
