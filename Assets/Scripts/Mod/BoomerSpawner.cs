@@ -22,7 +22,7 @@ public class BoomerSpawner : MonoBehaviour
         RaycastHit hit;
 
         // Check if raycast hit the plane
-        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == this.gameObject)
+        if (Physics.Raycast(ray, out hit))
         {
             // Then get the exact position of hit point
             Vector3 clickPosition = hit.point;

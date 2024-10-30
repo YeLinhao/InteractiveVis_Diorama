@@ -7,9 +7,32 @@ using UnityEngine.Rendering;
 public class Boomer : MonoBehaviour
 {
 
-    public float countdown = 3f;
-    public float radius = 5f;
-    public float force = 700f;
+    public float countdown;
+    public float radius;
+    public float force;
+    public bool ifHardMode;
+    public void SetArgumentForDiffMode()
+    {
+        ifHardMode = !ifHardMode;
+        if (!ifHardMode)
+        {
+            radius = 10f;
+            force = 1200f;
+        }
+
+        if (ifHardMode)
+        {
+            radius = 5f;
+            force = 700f;
+        }
+    }
+
+    public void SetHardModeToDefault(bool Default)
+    {
+        ifHardMode = default;
+        radius = 10f;
+        force = 1200f;
+    }
     public GameObject BoomEffectPrefab;
 
     bool hasExploded = false;
@@ -49,6 +72,8 @@ public class Boomer : MonoBehaviour
         Destroy(gameObject);
 
     }
+
+
 
 
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7267058903718166998}
   - component: {fileID: 6726349965491538283}
   - component: {fileID: 6588460143712646018}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pig
   m_TagString: Pig
   m_Icon: {fileID: 0}
@@ -216,6 +216,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pig
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd728859d52d13e45b7a6e6b34e08c0e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
