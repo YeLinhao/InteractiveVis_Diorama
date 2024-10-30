@@ -1,4 +1,4 @@
-A ridiculous game for class, exploring physical system in unity
+A funny physical game for my unity class.
 <br />
 
 MANUAL:<br />
@@ -9,4 +9,4 @@ Drag-Change View<br />
 Scroll-Zoom<br />
 
 You have 5 bombs initially,
-But  bomb will be added if you let a pig out :)
+But bomb will be added if you let a pig out :)
